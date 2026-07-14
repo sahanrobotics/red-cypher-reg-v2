@@ -1,4 +1,4 @@
-import { SOCIAL_LINKS } from "../config";
+import { SOCIAL_LINKS, FOOTER_SECTION } from "../config";
 
 export default function FooterSection() {
   return (
@@ -20,8 +20,8 @@ export default function FooterSection() {
           </div>
           <div className="footer-contact">
             <h5>Contact Us</h5>
-            <p>Email: hello@redcypher.lk</p>
-            <p>Phone: +94 XX XXX XXXX</p>
+            <p>Email: {FOOTER_SECTION.contactEmail}</p>
+            <p>Phone: {FOOTER_SECTION.contactPhone}</p>
           </div>
         </div>
 

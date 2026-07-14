@@ -67,7 +67,7 @@ export const STATS_SECTION = {
 
 export const ABOUT_SECTION = {
   preTitle: "01 / OVERVIEW",
-  title: "Beyond the Code: What is Red Cypher?",
+  title: "'Beyond the Code: What is Red Cypher?",
   highlight: "Red Cypher 3.0 is the definitive Capture the Flag (CTF) competition for Sri Lanka's brightest undergraduate minds. Organized by the Faculty of Engineering, University of Ruhuna, in proud partnership with our Title Sponsor Coin Ceylon and the IEEE Computer Society, this is where theory meets raw, practical skill. We provide a dynamic, simulated arena for students to hunt down vulnerabilities, break codes, and solve real-world security puzzles.",
   legacyTitle: "The Legacy of Red Cypher",
   legacyText: "What started as a bold initiative has evolved into a highly anticipated national showdown. In our previous chapters, Red Cypher united hundreds of passionate tech enthusiasts, sparking intense rivalries and incredible displays of talent. Now, in version 3.0, the stakes are higher, the challenges are tougher, and the prize pool is bigger. The grid is readyare you?",
@@ -100,7 +100,7 @@ export const PRIZES_SECTION = {
   tiers: [
     { rank: "FIRST PLACE", title: "Champions", prize: "5 × 10⁴ LKR", prizeColor: "linear-gradient(135deg, #FFE259 0%, #FFA751 100%)", desc: "The ultimate reward for the absolute masters of the network grid.", glowColor: "0 97 50", colors: ["#D80606", "#820303", "#4B0101"], intensity: 1.5 },
     { rank: "SECOND PLACE", title: "Runners Up", prize: "3 × 10⁴ LKR", prizeColor: "linear-gradient(135deg, #E3E3E3 0%, #9F9F9F 100%)", desc: "Exceptional technical execution deserves elite recognition.", glowColor: "0 0 50", colors: ["#820303", "#4B0101", "#000000"], intensity: 1.0 },
-    { rank: "THIRD PLACE", title: "Second Runners", prize: "2 × 10⁴ LKR", prizeColor: "linear-gradient(135deg, #F09819 0%, #EDDE5D 100%)", desc: "A true testament to resilience and strategic problem-solving.", glowColor: "0 0 30", colors: ["#4B0101", "#820303", "#000000"], intensity: 0.8 }
+    { rank: "THIRD PLACE", title: "Second Runners", prize: "2 × 10⁴ LKR", prizeColor: "linear-gradient(135deg, #763d00ff 0%, #e08e00ff 100%)", desc: "A true testament to resilience and strategic problem-solving.", glowColor: "0 0 30", colors: ["#4B0101", "#820303", "#000000"], intensity: 0.8 }
   ]
 };
 

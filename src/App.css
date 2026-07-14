@@ -419,9 +419,10 @@ button {
 }
 
 .highlight-p {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    color: #e5e7eb;
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.8;
+    color: #f3f4f6;
 }
 
 .eligibility-box {
