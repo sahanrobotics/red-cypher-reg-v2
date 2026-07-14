@@ -1,0 +1,32 @@
+.curved-loop-jacket {
+  /* Adjusted min-height and padding so it acts as a nice banner/separator */
+  padding: 4rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.curved-loop-svg {
+  user-select: none;
+  width: 100%;
+  aspect-ratio: 100 / 12;
+  overflow: visible;
+  display: block;
+  font-size: 6rem;
+  fill: #ffffff; /* We'll allow overriding via utility classes or custom styles */
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Custom class for red cypher theme */
+.cypher-marquee-text {
+  fill: rgba(216, 6, 6, 0.8);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  text-shadow: 0 0 20px rgba(216, 6, 6, 0.5);
+}

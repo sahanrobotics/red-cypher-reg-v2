@@ -1,0 +1,212 @@
+.registration-page {
+  min-height: 100vh;
+  padding: 100px 20px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.reg-back-btn {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.reg-back-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.reg-container {
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  z-index: 10;
+}
+
+.reg-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.reg-header h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 10px;
+}
+
+.reg-header p {
+  color: #999;
+  font-size: 1.1rem;
+}
+
+.reg-form-card {
+  background: rgba(15, 15, 15, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.form-section {
+  margin-bottom: 40px;
+}
+
+.form-section h3 {
+  font-size: 1.25rem;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group.full-width {
+  grid-column: span 2;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  color: #a1a1aa;
+  font-weight: 500;
+}
+
+.input-group input, .input-group select {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.input-group input:focus, .input-group select:focus {
+  border-color: #ff3131;
+  background: rgba(255, 49, 49, 0.05);
+}
+
+.input-group input.error-highlight {
+  border-color: #ff3131;
+  background: rgba(255, 49, 49, 0.1);
+}
+
+.input-group select option {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.member-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.member-card h4 {
+  margin-bottom: 15px;
+  color: #ff3131;
+  font-family: ui-monospace, monospace;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 30px 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: #ff3131;
+}
+
+.checkbox-group label {
+  color: #a1a1aa;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.checkbox-group label a {
+  color: #ff3131;
+  text-decoration: none;
+}
+
+.checkbox-group label a:hover {
+  text-decoration: underline;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.1rem;
+}
+
+.success-message {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.success-message h3 {
+  font-size: 2rem;
+  color: #00ff66;
+  margin-bottom: 15px;
+}
+
+.success-message p {
+  color: #a1a1aa;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .reg-back-btn {
+    top: 20px;
+    left: 20px;
+    padding: 8px 16px;
+  }
+  .input-grid {
+    grid-template-columns: 1fr;
+  }
+  .input-group.full-width {
+    grid-column: span 1;
+  }
+  .reg-form-card {
+    padding: 20px;
+  }
+}

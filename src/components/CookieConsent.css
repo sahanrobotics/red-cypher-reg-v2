@@ -1,0 +1,94 @@
+.cookie-consent-overlay {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  max-width: 450px;
+  z-index: 9999;
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cookie-consent-box {
+  background: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.cookie-content h4 {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.cookie-content p {
+  font-size: 0.9rem;
+  color: #a1a1aa;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cookie-content a {
+  color: #ff3131;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.cookie-content a:hover {
+  color: #ff4b4b;
+  text-decoration: underline;
+}
+
+.cookie-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cookie-btn {
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(120%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .cookie-consent-overlay {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 100%;
+    animation: slideUpMobile 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .cookie-consent-box {
+    border-radius: 20px 20px 0 0;
+    border-bottom: none;
+    padding: 24px 20px;
+  }
+}
+
+@keyframes slideUpMobile {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

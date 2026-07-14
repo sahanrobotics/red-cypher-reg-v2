@@ -1,0 +1,797 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    background: #090909;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Sidebar wrapper positioning */
+.sidebar {
+    position: fixed;
+    left: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+/* Main Content Area */
+.content {
+    margin-left: 220px;
+    transition: margin 0.3s ease;
+}
+
+/* Hero Display Setup */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+
+.badge {
+    display: inline-flex;
+    width: max-content;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: #151515;
+    border: 1px solid #2f2f2f;
+    color: #cfcfcf;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
+
+/* Logo placeholder spacing to keep things tight at the top */
+.hero-logo-placeholder {
+    min-height: 60px; /* Adjust this later based on your logo height */
+    margin-bottom: 10px;
+}
+
+/* Logo placeholder spacing to keep things tight at the top */
+/* Duplicate logo block removed */
+
+/* Reduced maximum font size from 6.5rem to 4.5rem so the long sentence fits well */
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    max-width: 900px;
+}
+
+/* Adjusted margins to pull everything upward */
+.hero-text {
+    margin-top: 10px;
+    color: #999999;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 650px;
+}
+
+.hero-tagline {
+    margin-top: 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #ff3131;
+    text-transform: uppercase;
+}
+
+/* Tighter margin to keep buttons securely above the fold */
+.buttons {
+    display: flex;
+    gap: 18px;
+    margin-top: 20px; 
+    margin-bottom: 10px;
+}
+button {
+    padding: 15px 32px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.primary {
+    background: #ff3131;
+    color: white;
+    border: none;
+    box-shadow: 0 0 15px rgba(255, 49, 49, 0.4);
+}
+
+.primary:hover {
+    background: #ff4b4b;
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(255, 49, 49, 0.6);
+}
+
+.secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Base Sections Layout */
+.page-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    max-width: 1200px; /* Expanded limit to provide space for 3D interactions */
+}
+
+.page-section h2 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 20px;
+}
+
+.page-section p {
+    color: #999;
+    font-size: 1.1rem;
+}
+
+/* 3D Gallery Integration Classes */
+.gallery-section {
+    max-width: 100%;
+    padding-right: 40px;
+}
+
+.section-subtitle {
+    margin-bottom: 30px;
+    max-width: 700px;
+}
+
+.gallery-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    border-radius: 20px;
+    border: 1px solid #1a1a1a;
+    background: #0b0b0b;
+    overflow: hidden;
+}
+
+/* Mobile Header (Hidden on Desktop setups) */
+.mobile-header {
+    display: none;
+}
+
+/* Responsive Control Layers */
+@media (max-width: 900px) {
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 20px 30px;
+        background: rgba(9, 9, 9, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        z-index: 2000;
+        border-bottom: 1px solid #1a1a1a;
+    }
+
+    .mobile-logo {
+        font-weight: 800;
+        font-size: 1.2rem;
+        color: #ff3131;
+        letter-spacing: 1px;
+    }
+
+    .hamburger-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hamburger-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: none;
+    }
+
+    .sidebar {
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        height: 100vh;
+        width: 280px;
+        background: #0d0d0d;
+        border-right: 1px solid #1a1a1a;
+        padding-top: 120px;
+        padding-left: 20px;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1500;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .mobile-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        z-index: 1400;
+    }
+
+.content {
+    margin-left: 0;
+}
+
+.hero {
+    padding: 80px 20px 40px 20px;
+    gap: 20px;
+}
+
+.page-section {
+    padding: 100px 30px 60px 30px;
+}
+
+.gallery-section {
+
+        padding-right: 30px;
+    }
+
+    .gallery-container {
+        height: 50vh; /* Reduced height bounds for cleaner mobile viewport flow */
+    }
+
+    .hero-text {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 35px;
+    }
+
+    .buttons button {
+        width: 100%;
+    }
+}
+
+/* Bento Grid Layout Configuration */
+.bento-container {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 50px;
+    padding: 0 10px;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.bento-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.bento-item:hover {
+    background: rgba(255, 49, 49, 0.02);
+    border-color: rgba(255, 49, 49, 0.3);
+    box-shadow: 0 10px 30px -15px rgba(255, 49, 49, 0.15);
+}
+
+.main-stat {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(255, 49, 49, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+    border-color: rgba(255, 49, 49, 0.15);
+}
+
+.dynamic-status {
+    grid-column: span 2;
+    padding: 14px 24px;
+    align-items: center;
+    background: rgba(0, 255, 102, 0.02);
+    border-color: rgba(0, 255, 102, 0.15);
+}
+
+.bento-label {
+    font-family: ui-monospace, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: #666666;
+    text-transform: uppercase;
+}
+
+.bento-counter {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+    margin: 12px 0;
+}
+
+.bento-counter.small {
+    font-size: 2.5rem;
+}
+
+.bento-desc {
+    font-size: 0.9rem;
+    color: #888888;
+    line-height: 1.4;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ping-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #00ff66;
+    border-radius: 50%;
+    position: relative;
+}
+
+.ping-dot::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00ff66;
+    border-radius: 50%;
+    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+    75%, 100% { transform: scale(3); opacity: 0; }
+}
+
+.status-text {
+    font-family: ui-monospace, monospace;
+    font-size: 0.8rem;
+    color: #00ff66;
+    letter-spacing: 1px;
+}
+
+/* General Page Section Styling */
+.text-block-section {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.section-header-wrap {
+    margin-bottom: 40px;
+}
+
+.section-pre {
+    font-family: ui-monospace, monospace;
+    color: #ff3131;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.two-column-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.highlight-p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #e5e7eb;
+}
+
+.eligibility-box {
+    background: rgba(255,255,255,0.02);
+    border-left: 3px solid #ff3131;
+    padding: 24px;
+    border-radius: 0 16px 16px 0;
+}
+
+.eligibility-box ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.eligibility-box li {
+    margin-bottom: 12px;
+    color: #9ca3af;
+}
+
+/* Challenges Detailed Grid Grid */
+.challenges-grid-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.track-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.track-card h4 {
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.track-card p {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+/* Prize Section Structure */
+.tier-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.tier-card-inner {
+    padding: 40px;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    min-width: 280px;
+}
+
+.tier-rank {
+    font-family: ui-monospace, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    color: #D80606; /* BRICK EMBER */
+    margin-bottom: 8px;
+    background: rgba(216, 6, 6, 0.1);
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+.tier-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.tier-prize {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #D80606;
+    margin: 8px 0;
+}
+
+.tier-card-inner p {
+    font-size: 0.95rem;
+    color: #999;
+    max-width: 240px;
+    line-height: 1.5;
+}
+
+/* Timeline Components */
+.timeline-tree {
+    position: relative;
+    max-width: 700px;
+    margin: 40px auto 0 auto;
+    padding-left: 30px;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+
+.timeline-node {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.node-marker {
+    position: absolute;
+    left: -42px;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background: #090909;
+    border: 2px solid #ff3131;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    font-family: ui-monospace, monospace;
+    color: #ffffff;
+}
+
+.node-date {
+    font-family: ui-monospace, monospace;
+    font-size: 0.85rem;
+    color: #ff7300;
+    display: block;
+    margin: 4px 0 8px 0;
+}
+
+/* FAQ Accordion Architecture */
+.faq-accordion {
+    width: 100%;
+    max-width: 750px;
+    margin: 30px auto;
+    text-align: left;
+}
+
+.faq-row {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.faq-answer {
+    margin-top: 12px;
+    color: #888888;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Footer Implementation */
+.grid-footer {
+    width: 100%;
+    margin-top: 120px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 60px 40px 30px 40px;
+    background: #050505;
+    text-align: left;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-brand h4 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.footer-top h5 {
+    font-family: ui-monospace, monospace;
+    color: #666;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.footer-links a {
+    display: block;
+    color: #888;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover { color: #ff3131; }
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 30px;
+    font-size: 0.85rem;
+    color: #444;
+}
+
+.footer-socials a {
+    color: #888;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.footer-socials a:hover { color: #ffffff; }
+
+/* Responsive Grid Adaptation */
+@media (max-width: 768px) {
+    .bento-grid { grid-template-columns: 1fr; }
+    .main-stat { grid-column: span 1; }
+    .dynamic-status { grid-column: span 1; }
+    .two-column-layout { grid-template-columns: 1fr; gap: 20px; }
+    .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+}
+
+
+.pixel-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.pixel-card {
+  /* Changed from fixed pixels to adapt to your .challenges-grid-details layout */
+  width: 100%; 
+  height: 100%;
+  min-height: 250px; /* Adjust this to fit your text properly */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ab0000;
+  border-radius: 16px;
+  isolation: isolate;
+  transition: border-color 200ms cubic-bezier(0.5, 1, 0.89, 1);
+  user-select: none;
+}
+
+.pixel-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, #09090b, transparent 85%);
+  opacity: 0;
+  transition: opacity 800ms cubic-bezier(0.5, 1, 0.89, 1);
+  z-index: 1;
+}
+
+.pixel-card:hover::before,
+.pixel-card:focus-within::before {
+  opacity: 1;
+}
+
+/* --- BENTO GRID CONTAINER --- */
+.bento-grid-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile: 1 column */
+  gap: 16px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding: 0 1.5rem;
+}
+
+/* --- BENTO GRID RESPONSIVENESS --- */
+
+/* Tablet (768px and up): 2 Columns */
+@media (min-width: 768px) {
+  .bento-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  /* Make the first item span across both columns on tablet to look like a hero card */
+  .bento-item:nth-child(1) {
+    grid-column: span 2; 
+  }
+}
+
+/* Desktop (1024px and up): 3 Columns puzzle */
+@media (min-width: 1024px) {
+  .bento-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  
+  /* Reset the tablet nth-child rule */
+  .bento-item:nth-child(1) {
+    grid-column: auto;
+  }
+
+  /* Specific Bento spans for desktop */
+  .bento-wide {
+    grid-column: span 2; /* Takes up 2 columns */
+  }
+  
+  .bento-standard {
+    grid-column: span 1; /* Takes up 1 column */
+  }
+}
+
+/* --- INNER CARD STYLING --- */
+.bento-item {
+  display: flex;
+  height: 100%;
+  min-height: 220px; /* Base height for cards */
+}
+
+/* Forces the PixelCard wrapper to fill the grid cell exactly */
+.bento-pixel-wrapper {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 20px !important;
+}
+
+/* The actual text content inside the card */
+.bento-card-content {
+  position: relative;
+  z-index: 10;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  text-align: left; /* Left align text looks premium in Bento grids */
+  pointer-events: none; /* Lets mouse events pass through to trigger pixel canvas */
+}
+
+.bento-card-content h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.bento-card-content p {
+  font-size: 0.95rem;
+  color: #a1a1aa;
+  line-height: 1.5;
+  margin: 0;
+}
