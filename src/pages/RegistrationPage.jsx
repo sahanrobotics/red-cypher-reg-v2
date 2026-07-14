@@ -4,6 +4,7 @@ import GradientText from '../components/GradientText';
 import Stepper, { Step } from '../components/Stepper';
 import CurvedLoop from '../components/CurvedLoop';
 import SpotlightCard from '../components/SpotlightCard';
+import FooterSection from '../sections/FooterSection';
 import './RegistrationPage.css';
 
 const UNIVERSITIES = [
@@ -185,9 +186,10 @@ export default function RegistrationPage() {
   );
 
   return (
-    <div className="registration-page">
-      {/* Background Effect */}
-      <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
+    <>
+      <div className="registration-page">
+        {/* Background Effect */}
+        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>
         <PixelBlast
           variant="circle"
           pixelSize={4}
@@ -408,16 +410,20 @@ export default function RegistrationPage() {
         )}
       </div>
 
-      <div style={{ position: 'relative', zIndex: 5, width: '100%', marginTop: 'auto' }}>
-        <CurvedLoop
-          marqueeText="DECRYPT ✦ DEFEND  ✦ PREVAIL ✦ "
-          speed={1.5}
-          curveAmount={300}
-          direction="left"
-          interactive={true}
-          className="cypher-marquee-text"
-        />
+        <div style={{ position: 'relative', zIndex: 5, width: '100%', marginTop: 'auto', marginBottom: '20px' }}>
+          <CurvedLoop
+            marqueeText="DECRYPT ✦ DEFEND  ✦ PREVAIL ✦ "
+            speed={1.5}
+            curveAmount={300}
+            direction="left"
+            interactive={true}
+            className="cypher-marquee-text"
+          />
+        </div>
       </div>
-    </div>
+      <div style={{ position: 'relative', zIndex: 10, backgroundColor: 'rgba(10,10,10,0.8)', backdropFilter: 'blur(10px)', borderTop: '1px solid rgba(255,49,49,0.2)' }}>
+        <FooterSection />
+      </div>
+    </>
   );
 }

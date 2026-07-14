@@ -18,15 +18,23 @@ export default function PrizesSection() {
             key={index}
             glowColor={tier.glowColor}
             backgroundColor="#000000"
-            borderRadius={20}
-            glowRadius={30}
+            borderRadius={60}
+            glowRadius={110}
             glowIntensity={tier.intensity}
             colors={tier.colors}
           >
             <div className="tier-card-inner">
               <div className="tier-rank">{tier.rank}</div>
               <div className="tier-title">{tier.title}</div>
-              <div className="tier-prize">{tier.prize}</div>
+              <div className="tier-prize" style={{
+                backgroundImage: tier.prizeColor,
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                color: 'transparent'
+              }}>
+                {tier.prize}
+              </div>
               <p>{tier.desc}</p>
             </div>
           </BorderGlow>

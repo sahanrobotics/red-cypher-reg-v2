@@ -92,15 +92,14 @@ export const CHALLENGES_SECTION = {
     { title: "MISC", desc: "Expect the unexpected. Wildcard challenges that defy traditional categories.", image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600", alt: "MISC" }
   ]
 };
-
 export const PRIZES_SECTION = {
   preTitle: "03 / REWARDS",
   title: "The Spoils of War",
   subtitle: "Glory and bragging rights are the foundation. Prove your technical dominance, climb the leaderboard, and claim your share of the prize pool.",
   tiers: [
-    { rank: "FIRST PLACE", title: "Champions", prize: "50,000 LKR", desc: "The ultimate reward for the absolute masters of the network grid.", glowColor: "0 97 50", colors: ["#D80606", "#820303", "#4B0101"], intensity: 1.5 },
-    { rank: "SECOND PLACE", title: "Runners Up", prize: "30,000 LKR", desc: "Exceptional technical execution deserves elite recognition.", glowColor: "0 0 50", colors: ["#820303", "#4B0101", "#000000"], intensity: 1.0 },
-    { rank: "THIRD PLACE", title: "Second Runners", prize: "20,000 LKR", desc: "A true testament to resilience and strategic problem-solving.", glowColor: "0 0 30", colors: ["#4B0101", "#820303", "#000000"], intensity: 0.8 }
+    { rank: "FIRST PLACE", title: "Champions", prize: "5 × 10⁴ LKR", prizeColor: "linear-gradient(135deg, #FFE259 0%, #FFA751 100%)", desc: "The ultimate reward for the absolute masters of the network grid.", glowColor: "0 97 50", colors: ["#D80606", "#820303", "#4B0101"], intensity: 1.5 },
+    { rank: "SECOND PLACE", title: "Runners Up", prize: "3 × 10⁴ LKR", prizeColor: "linear-gradient(135deg, #E3E3E3 0%, #9F9F9F 100%)", desc: "Exceptional technical execution deserves elite recognition.", glowColor: "0 0 50", colors: ["#820303", "#4B0101", "#000000"], intensity: 1.0 },
+    { rank: "THIRD PLACE", title: "Second Runners", prize: "2 × 10⁴ LKR", prizeColor: "linear-gradient(135deg, #F09819 0%, #EDDE5D 100%)", desc: "A true testament to resilience and strategic problem-solving.", glowColor: "0 0 30", colors: ["#4B0101", "#820303", "#000000"], intensity: 0.8 }
   ]
 };
 
@@ -130,8 +129,8 @@ export const FOOTER_SECTION = {
   organizedByText: "Faculty of Engineering, University of Ruhuna",
   partnershipTitle: "In Partnership With",
   partners: [
-    { title: "Title Sponsor", name: "Coin Ceylon", logoPath: "/logo.png" },
-    { title: "Official Partner", name: "IEEE Computer Society", logoPath: "/IEEE-CS_LogoTM-orange.webp" }
+    { title: "Title Sponsor", name: "Coin Ceylon", logoPath: "public/logo.png" },
+    { title: "Official Partner", name: "IEEE Computer Society", logoPath: "public\IEEE-CS_LogoTM-orange.webp" }
   ],
   quickLinksTitle: "Quick Links",
   quickLinks: [
