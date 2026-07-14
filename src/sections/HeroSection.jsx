@@ -35,13 +35,13 @@ export default function HeroSection() {
 
         {/* Call to Action */}
         <div className="buttons" style={{ ...styles.buttonGroup, margin: '1rem 0' }}>
-          <button 
+          <button
             className="primary"
-            onClick={() => window.location.hash = '#register'} 
+            onClick={() => window.location.hash = '#register'}
           >
             {HERO_SECTION.registerText}
           </button>
-          <button 
+          <button
             className="secondary"
             onClick={() => document.getElementById('challenges')?.scrollIntoView({ behavior: 'smooth' })}
           >
@@ -56,7 +56,7 @@ export default function HeroSection() {
             radius={120}
             duration={1.5}
             speed={0.4}
-            scrambleChars="01!<>-_\\/[]{}—=+*^?#"
+            scrambleChars="RED-CYPHER"
           >
             {HERO_SECTION.description}
           </ScrambledText>
@@ -78,13 +78,13 @@ export default function HeroSection() {
         <PixelBlast
           variant="circle"
           pixelSize={4}
-          color="#ff3131"
+          color="#e40000ff"
           patternScale={3}
-          patternDensity={1.2}
+          patternDensity={0.3}
           pixelSizeJitter={0.5}
           enableRipples={true}
           rippleSpeed={0.4}
-          rippleThickness={0.12}
+          rippleThickness={0.52}
           rippleIntensityScale={1.5}
           liquid={true}
           liquidStrength={0.12}
@@ -95,11 +95,11 @@ export default function HeroSection() {
           transparent={true}
         />
         {/* Black Gradient Fade Overlay (Vignette) */}
-        <div style={{ 
-          position: 'absolute', 
-          inset: 0, 
-          background: 'radial-gradient(circle at center, rgba(9,9,9,0.1) 0%, rgba(9,9,9,0.4) 70%, rgba(9,9,9,0.7) 100%)',
-          pointerEvents: 'none' 
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'radial-gradient(circle at center, rgba(9,9,9,0.5) 0%, rgba(9,9,9,0.7) 70%, rgba(9,9,9,0.95) 100%)',
+          pointerEvents: 'none'
         }} />
       </div>
       {/* Optimized Gradual Blur (Lower divCount to 3 for 60FPS scrolling) */}
@@ -167,7 +167,7 @@ const styles = {
     letterSpacing: "2px",
   },
   dot: {
-    color: "#D80606",
+    color: "#ff0000ff",
   },
   buttonGroup: {
     display: "flex",

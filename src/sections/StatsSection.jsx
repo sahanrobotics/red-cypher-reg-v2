@@ -43,29 +43,29 @@ export default function StatsSection() {
   }, []);
 
   return (
-    <section 
-      id="stats" 
-      className="stats-section" 
-      style={{ 
+    <section
+      id="stats"
+      className="stats-section"
+      style={{
         padding: "3rem 0", // Reduced padding to decrease height
-        display: "flex", 
+        display: "flex",
         flexDirection: "column",
         alignItems: "center",
         gap: "2.5rem" // Gap between cards and logo loop
       }}
     >
       <div className="bento-container" style={{ width: "100%", maxWidth: "1200px", padding: "0 1.5rem" }}>
-        
+
         {/* Stats Grid using SpotlightCard */}
-        <div 
-          className="bento-grid" 
-          style={{ 
-            display: "grid", 
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", 
-            gap: "1.5rem" 
+        <div
+          className="bento-grid"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "1.5rem"
           }}
         >
-          <SpotlightCard className="bento-item main-stat" spotlightColor="rgba(0, 229, 255, 0.2)">
+          <SpotlightCard className="bento-item main-stat" spotlightColor="rgba(216, 6, 6, 0.2)">
             <span className="bento-label" style={{ fontWeight: 'bold', color: '#888', letterSpacing: '1px' }}>
               {STATS_SECTION.statsLabels.participants}
             </span>
@@ -77,7 +77,7 @@ export default function StatsSection() {
             </p>
           </SpotlightCard>
 
-          <SpotlightCard className="bento-item sub-stat" spotlightColor="rgba(0, 229, 255, 0.2)">
+          <SpotlightCard className="bento-item sub-stat" spotlightColor="rgba(216, 6, 6, 0.2)">
             <span className="bento-label" style={{ fontWeight: 'bold', color: '#888', letterSpacing: '1px' }}>
               {STATS_SECTION.statsLabels.universities}
             </span>
@@ -89,7 +89,7 @@ export default function StatsSection() {
             </p>
           </SpotlightCard>
 
-          <SpotlightCard className="bento-item sub-stat" spotlightColor="rgba(0, 229, 255, 0.2)">
+          <SpotlightCard className="bento-item sub-stat" spotlightColor="rgba(216, 6, 6, 0.2)">
             <span className="bento-label" style={{ fontWeight: 'bold', color: '#888', letterSpacing: '1px' }}>
               {STATS_SECTION.statsLabels.teams}
             </span>
