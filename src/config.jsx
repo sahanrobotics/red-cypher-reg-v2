@@ -1,13 +1,15 @@
 import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiPython,
-  SiJavascript,
-  SiGithub,
-  SiNodedotjs
-} from "react-icons/si";
+  AiOutlineDeploymentUnit, // Good for network/node mapping
+  AiOutlineSafetyCertificate
+} from "react-icons/ai";
+
+import {
+  MdSecurity,
+  MdOutlineHub,
+  MdLan,
+  MdOutlineVpnLock
+} from "react-icons/md";
+
 
 export const NAVIGATION = [
   "Home",
@@ -15,6 +17,7 @@ export const NAVIGATION = [
   "Challenges",
   "Prizes",
   "Timeline",
+  "Memories",
   "FAQ",
 ];
 
@@ -53,14 +56,12 @@ export const STATS_SECTION = {
     teamsDesc: "Elite 3-4 member teams locked down for battle."
   },
   partnerLogos: [
-    { node: <SiReact />, title: "React" },
-    { node: <SiNextdotjs />, title: "Next.js" },
-    { node: <SiTypescript />, title: "TypeScript" },
-    { node: <SiTailwindcss />, title: "Tailwind" },
-    { node: <SiPython />, title: "Python" },
-    { node: <SiJavascript />, title: "JavaScript" },
-    { node: <SiGithub />, title: "GitHub" },
-    { node: <SiNodedotjs />, title: "Node.js" },
+    { node: <MdLan />, title: "Network Map" },
+    { node: <MdOutlineHub />, title: "Infrastructure" },
+    { node: <AiOutlineDeploymentUnit />, title: "Deployment Node" },
+    { node: <MdOutlineVpnLock />, title: "VPN/Tunneling" },
+    { node: <MdSecurity />, title: "Cyber Security" },
+    { node: <AiOutlineSafetyCertificate />, title: "Compliance" },
   ]
 };
 
@@ -69,7 +70,7 @@ export const ABOUT_SECTION = {
   title: "Beyond the Code: What is Red Cypher?",
   highlight: "Red Cypher 3.0 is the definitive Capture the Flag (CTF) competition for Sri Lanka's brightest undergraduate minds. Organized by the Faculty of Engineering, University of Ruhuna, in proud partnership with our Title Sponsor Coin Ceylon and the IEEE Computer Society, this is where theory meets raw, practical skill. We provide a dynamic, simulated arena for students to hunt down vulnerabilities, break codes, and solve real-world security puzzles.",
   legacyTitle: "The Legacy of Red Cypher",
-  legacyText: "What started as a bold initiative has evolved into a highly anticipated national showdown. In our previous chapters, Red Cypher united hundreds of passionate tech enthusiasts, sparking intense rivalries and incredible displays of talent. Now, in version 3.0, the stakes are higher, the challenges are tougher, and the prize pool is bigger. The grid is ready—are you?",
+  legacyText: "What started as a bold initiative has evolved into a highly anticipated national showdown. In our previous chapters, Red Cypher united hundreds of passionate tech enthusiasts, sparking intense rivalries and incredible displays of talent. Now, in version 3.0, the stakes are higher, the challenges are tougher, and the prize pool is bigger. The grid is readyare you?",
   eligibilityTitle: "Are You Ready to Hack? (Eligibility)",
   eligibilityList: [
     { title: "Undergraduate Students", desc: "Open to all undergraduates from recognized universities and institutes across Sri Lanka." },
@@ -115,6 +116,27 @@ export const TIMELINE_SECTION = {
   ]
 };
 
+export const MEMORIES_SECTION = {
+  preTitle: "05 / FLASHBACKS",
+  title: "Past Memories",
+  subtitle: "Glimpses from the previous iterations. Relive the intensity, the struggle, and the ultimate glory of Red Cypher.",
+  images: [
+    { title: "Red Cypher 1.0 - Moment 3", desc: "Past Memory", image: "/rc1/3.jpg" },
+    { title: "Red Cypher", desc: "Decrypt Defend Prevail", image: "/Logo Only.png" },
+    { title: "Red Cypher 2.0 - Moment 1", desc: "Past Memory", image: "/rc2/1.jpg" },
+    { title: "Red Cypher 1.0 - Moment 5", desc: "Past Memory", image: "/rc1/5.jpg" },
+    { title: "Red Cypher 2.0 - Moment 4", desc: "Past Memory", image: "/rc2/4.jpg" },
+    { title: "Red Cypher", desc: "Decrypt Defend Prevail", image: "/Logo Only.png" },
+    { title: "Red Cypher 1.0 - Moment 2", desc: "Past Memory", image: "/rc1/2.jpg" },
+    { title: "Red Cypher 2.0 - Moment 2", desc: "Past Memory", image: "/rc2/2.jpg" },
+    { title: "Red Cypher 1.0 - Moment 1", desc: "Past Memory", image: "/rc1/1.jpg" },
+    { title: "Red Cypher", desc: "Decrypt Defend Prevail", image: "/Logo Only.png" },
+    { title: "Red Cypher 2.0 - Moment 5", desc: "Past Memory", image: "/rc2/5.jpg" },
+    { title: "Red Cypher 1.0 - Moment 4", desc: "Past Memory", image: "/rc1/4.jpg" },
+    { title: "Red Cypher 2.0 - Moment 3", desc: "Past Memory", image: "/rc2/3.jpg" }
+  ]
+};
+
 export const FAQ_DATA = [
   { q: "What exactly is a Capture the Flag (CTF) competition?", a: "In cybersecurity, a CTF is an operational competition where participants solve targeted security challenges to discover hidden cryptographic text strings called 'flags.' Submitting these verified flags instantly earns your team points on the leaderboard." },
   { q: "Do I need to be a cybersecurity expert to participate?", a: "Not at all! While some advanced tracks are configured for experts, we have plenty of beginner-friendly puzzles deployed. Plus, our structured awareness sessions will help you safely get up to speed before the launch." },
@@ -140,9 +162,29 @@ export const FOOTER_SECTION = {
     { label: "Leaderboard", link: "#prizes" }
   ],
   contactTitle: "Contact Us",
-  contactEmail: "hello@redcypher.lk",
-  contactPhone: "+94 XX XXX XXXX",
+  contactEmail: "info.redcypher@gmail.com",
+  contactPhone: "+94717383208",
   copyright: "© 2026 Red Cypher 3.0 | Faculty of Engineering, University of Ruhuna. All Rights Reserved."
+};
+
+export const CO_CHAIRS = {
+  title: "Project Co-Chairs",
+  members: [
+    {
+      name: "Sahan Manthreerathna",
+      email: "shnofficialmail@gmail.com",
+      phone: "+94717383208",
+      whatsapp: "+94717383208",
+      image: "/Co-Chairs/co-chair-1.jpg"
+    },
+    {
+      name: "Sayuru Priyanjana",
+      email: "sayurupriyanjana41@gmail.com",
+      phone: "+94703132527",
+      whatsapp: "+94703132527",
+      image: "/Co-Chairs/Co-chair-2.jpeg"
+    }
+  ]
 };
 
 export const COOKIE_CONSENT = {

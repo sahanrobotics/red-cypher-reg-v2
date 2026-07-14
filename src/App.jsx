@@ -11,7 +11,9 @@ import AboutSection from "./sections/AboutSection";
 import ChallengesSection from "./sections/ChallengesSection";
 import PrizesSection from "./sections/PrizesSection";
 import TimelineSection from "./sections/TimelineSection";
+import MemorySection from "./sections/MemorySection";
 import FaqSection from "./sections/FaqSection";
+import CoChairsSection from "./sections/CoChairsSection";
 import FooterSection from "./sections/FooterSection";
 import CookieConsent from "./components/CookieConsent";
 import RegistrationPage from "./pages/RegistrationPage"; // <-- Import the new page
@@ -132,7 +134,9 @@ export default function App() {
         <ChallengesSection />
         <PrizesSection />
         <TimelineSection />
+        <MemorySection />
         <FaqSection />
+        <CoChairsSection />
         <FooterSection />
       </main>
       <CookieConsent />

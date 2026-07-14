@@ -1,4 +1,3 @@
-import DomeGallery from "../components/DomeGallery";
 import PixelCard from "../components/PixelCard"; // Adjust this path if necessary
 import { CHALLENGES_SECTION } from "../config";
 
@@ -11,21 +10,6 @@ export default function ChallengesSection() {
         <p className="section-subtitle">
           {CHALLENGES_SECTION.subtitle}
         </p>
-      </div>
-      
-      <div className="gallery-container">
-        <DomeGallery 
-          images={CHALLENGES_SECTION.tracks}
-          fit={0.65}
-          fitBasis="auto"
-          minRadius={500}
-          overlayBlurColor="#000000" /* PURE BLACK PALETTE */
-          grayscale={false}
-          openedImageWidth="320px"
-          openedImageHeight="420px"
-          imageBorderRadius="16px"
-          openedImageBorderRadius="24px"
-        />
       </div>
 
       <div className="challenges-grid-details">
